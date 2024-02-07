@@ -1,0 +1,12 @@
+version: '3'
+services:
+  pro-epargne-reverse-proxy:
+    image: nginx
+    container_name: qua-reverse-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./conf/:/etc/nginx/conf.d/"
+      - "./private.key:/etc/ssl/private.key"
+      - "./certificate.crt:/etc/ssl/certificate.crt"

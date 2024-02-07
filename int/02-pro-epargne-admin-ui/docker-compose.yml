@@ -1,0 +1,15 @@
+version: '3'
+services:
+    pro-epargne-admin-ui:
+        image: mchekini/pro-epargne-admin-ui
+        container_name: pro-epargne-admin-ui
+        ports:
+            - "82:80"
+        volumes:
+            - "./conf/default.conf:/etc/nginx/conf.d/default.conf"
+
+
+networks:
+    default:
+        external:
+            name: pro-epargne

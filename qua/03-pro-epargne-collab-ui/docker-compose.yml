@@ -1,0 +1,14 @@
+version: '3'
+services:
+    pro-epargne-collab-ui:
+        image: mchekini/pro-epargne-collab-ui
+        container_name: pro-epargne-collab-ui
+        ports:
+            - "81:80"
+            - "444:443"
+
+
+networks:
+    default:
+        external:
+            name: pro-epargne
