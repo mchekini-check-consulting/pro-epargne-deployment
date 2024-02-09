@@ -20,6 +20,7 @@ node("deploy-node-$environment") {
                             println "No Running Container"
                         } finally {
                             sh "echo VAULT_TOKEN=$VAULT_TOKEN > .env"
+                            sh "sudo docker-compose pull"
                             sh "sudo docker-compose up -d"
                             sh "sudo rm .env"
                         }
