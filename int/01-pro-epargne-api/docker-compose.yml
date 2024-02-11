@@ -9,8 +9,6 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=int
       - SPRING_CLOUD_VAULT_TOKEN=${VAULT_TOKEN}
-    volumes:
-      - pg:/var/lib/postgresql/data
   pro-epargne-db:
     image: postgres
     container_name: pro-epargne-db
@@ -18,6 +16,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
+    volumes:
+      - pg:/var/lib/postgresql/data
   pgweb:
     container_name: pro-epargne-pg-web
     restart: always
